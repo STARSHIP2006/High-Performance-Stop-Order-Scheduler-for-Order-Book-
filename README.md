@@ -47,8 +47,7 @@ git clone https://github.com/STARSHIP2006/High-Performance-Stop-Order-Scheduler-
 cd High-Performance-Stop-Order-Scheduler-for-Order-Book-
 ```
 
-Compile
-======
+##  Compile
 
 ```bash
 mkdir build
@@ -57,8 +56,8 @@ cmake -DCMAKE_BUILD_TYPE=Release ..
 cmake --build . --config Release
 ```
 
-Run
-===
+## Run
+
 ```bash
 ./StopOrderScheduler
 ```
@@ -68,8 +67,8 @@ If the executable is generated inside the build directory:
 ./build/StopOrderScheduler
 ```
 
-Example Run With Arguments
-==========================
+## Example Run With Arguments
+
 ```bash
 ./build/StopOrderScheduler \
   --input examples/orders.csv \
@@ -77,8 +76,7 @@ Example Run With Arguments
   --threads 4
 ```
 
-Command Line Options
-====================
+## Command Line Options
 
 ```bash
 --input <file>     Input order stream  
@@ -87,16 +85,10 @@ Command Line Options
 --help             Display usage information  
 ```
 
-Clean Build
-===========
+## Clean Build
 
 ```bash
 rm -rf build
 ```
 
-
-License
-=======
-
-MIT License
 > This repository is a personal project focused on concurrency, data structures, and performance engineering in quantitative systems.
