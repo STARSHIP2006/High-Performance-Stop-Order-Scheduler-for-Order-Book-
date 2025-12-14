@@ -29,29 +29,74 @@
 - Catch-based unit tests
 
 
-## Build and Run Instructions (Typical C++)
+## Build and Run
 
-### Clone the Repository
+### Prerequisites
+
+- C++ compiler with C++17/C++20 support  
+  (GCC ≥ 10 / Clang ≥ 10 / MSVC ≥ 2019)
+- CMake ≥ 3.10
+- make or ninja
+
+---
+
+### Clone Repository
+
 ```bash
 git clone https://github.com/STARSHIP2006/High-Performance-Stop-Order-Scheduler-for-Order-Book-.git
 cd High-Performance-Stop-Order-Scheduler-for-Order-Book-
+```
 
-# On Ubuntu / Debian
-sudo apt install libtbb-dev
+Compile
+======
 
-# On Fedora / RHEL
-sudo dnf install tbb-devel
-
-g++ -std=c++17 -pthread \
-  main.cpp StopScheduler.cpp \
-  -I. \
-  -o orderbook
-
+```bash
 mkdir build
 cd build
-cmake ..
-make
+cmake -DCMAKE_BUILD_TYPE=Release ..
+cmake --build . --config Release
+```
 
-./orderbook
+Run
+===
+```bash
+./StopOrderScheduler
+```
 
+If the executable is generated inside the build directory:
+```bash
+./build/StopOrderScheduler
+```
+
+Example Run With Arguments
+==========================
+```bash
+./build/StopOrderScheduler \
+  --input examples/orders.csv \
+  --config examples/config.json \
+  --threads 4
+```
+
+Command Line Options
+====================
+
+```bash
+--input <file>     Input order stream  
+--config <file>    Scheduler configuration  
+--threads <n>      Number of worker threads  
+--help             Display usage information  
+```
+
+Clean Build
+===========
+
+```bash
+rm -rf build
+```
+
+
+License
+=======
+
+MIT License
 > This repository is a personal project focused on concurrency, data structures, and performance engineering in quantitative systems.
