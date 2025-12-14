@@ -28,4 +28,30 @@
 - Comprehensive test suite
 - Catch-based unit tests
 
+
+## Build and Run Instructions (Typical C++)
+
+### Clone the Repository
+```bash
+git clone https://github.com/STARSHIP2006/High-Performance-Stop-Order-Scheduler-for-Order-Book-.git
+cd High-Performance-Stop-Order-Scheduler-for-Order-Book-
+
+# On Ubuntu / Debian
+sudo apt install libtbb-dev
+
+# On Fedora / RHEL
+sudo dnf install tbb-devel
+
+g++ -std=c++17 -pthread \
+  main.cpp StopScheduler.cpp \
+  -I. \
+  -o orderbook
+
+mkdir build
+cd build
+cmake ..
+make
+
+./orderbook
+
 > This repository is a personal project focused on concurrency, data structures, and performance engineering in quantitative systems.
